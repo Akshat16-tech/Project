@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Movies</h1>
+        <form action="/api/movies" method="GET">
+            <div class="form-group">
+                <label for="page">Page</label>
+                <input type="number" class="form-control" id="page" name="page" value="{{ page }}">
+            </div>
+            <div class="form-group">
+                <label for="perPage">Per Page:</label>
+                <input type="number" class="form-control" id="perPage" name="perPage" value="{{ perPage }}">
+            </div>
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <input type="text" class="form-control" id="title" name="title" value="{{ title }}">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+    </div>
+</body>
+</html>

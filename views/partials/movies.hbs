@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Movies</h1>
+        <form action="/movies" method="GET">
+            <div class="form-group">
+                <label for="page">Page:</label>
+                <input type="number" class="form-control" id="page" name="page" value="{{ page }}">
+            </div>
+            <div class="form-group">
+                <label for="perPage">Per Page:</label>
+                <input type="number" class="form-control" id="perPage" name="perPage" value="{{ perPage }}">
+            </div>
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <input type="text" class="form-control" id="title" name="title" value="{{ title }}">
+            </div>
+            <button type="submit" class="btn btn-primary">Filter</button>
+        </form>
+        <hr>
+        <div class="row">
+            {{#each movies}}
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="{{ poster }}" class="card-img-top" alt="{{ title }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ title }}</h5>
+                            <p class="card-text">{{ plot }}</p>
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+</body>
+</html>
