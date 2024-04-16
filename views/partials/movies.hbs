@@ -4,43 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movies</title>
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel='stylesheet' href='/stylesheets/style.css'>
     <style>
-
+        /* Custom Styles */
+        body {
+            background-color: #f8f9fa;
+        }
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Movies</h1>
-        <form action="/movies" method="GET">
-            <div class="form-group">
-                <label for="page">Page:</label>
-                <input type="number" class="form-control" id="page" name="page" value="{{ page }}">
-            </div>
-            <div class="form-group">
-                <label for="perPage">Per Page:</label>
-                <input type="number" class="form-control" id="perPage" name="perPage" value="{{ perPage }}">
-            </div>
-            <div class="form-group">
-                <label for="title">Title:</label>
-                <input type="text" class="form-control" id="title" name="title" value="{{ title }}">
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Welcome to the Cinema</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+           
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container my-5">
+        <h1 class="mb-4">Movies</h1>
+        <form action="/movies" method="GET" class="mb-4">
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label for="page">Page:</label>
+                    <input type="number" class="form-control" id="page" name="page" value="{{ page }}">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="perPage">Per Page:</label>
+                    <input type="number" class="form-control" id="perPage" name="perPage" value="{{ perPage }}">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="title">Title:</label>
+                    <input type="text" class="form-control" id="title" name="title" value="{{ title }}">
+                </div>
             </div>
             <button type="submit" class="btn btn-primary">Filter</button>
         </form>
-        <hr>
         <div class="row">
             {{#each movies}}
                 <div class="col-md-4 mb-4">
-                    <div class="card">
+                    <div class="card h-100">
                         <img src="{{ poster }}" class="card-img-top" alt="{{ title }}">
                         <div class="card-body">
                             <h5 class="card-title">{{ title }}</h5>
-                            <p class="card-text">{{ plot }}</p>
+                            <div class="card-text">
+                                <p><strong>Genres:</strong> {{ genres }}</p>
+                                <p><strong>Runtime:</strong> {{ runtime }} minutes</p>
+                                <p><strong>Cast:</strong> {{ cast }}</p>
+                                <p><strong>IMDB Rating:</strong> {{ imdb.rating }}</p>
+                                <p><strong>Plot:</strong> {{ plot }}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             {{/each}}
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <span>&copy; All Movies Inc.</span>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

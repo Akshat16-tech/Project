@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+    <link rel='stylesheet' href='/stylesheets/style2.css' />
+</head>
+<body>
+    <div class="container">
+        <h1>Movies</h1>
+        <hr>
+       <div>
+            <h2>Browse Movies by Genre:</h2>
+            <div class="genre-buttons">
+                {{#each genres}}
+                    <button type="button" class="btn btn-secondary genre-btn" data-genre="{{ this }}">{{ this }}</button>
+                {{/each}}
+            </div>
+        </div>
+        <div class="row">
+            {{#each movies}}
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="{{ poster }}" class="card-img-top" alt="{{ title }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ title }}</h5>
+                            <p class="card-text">{{ plot }}</p>
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+</body>
+</html>

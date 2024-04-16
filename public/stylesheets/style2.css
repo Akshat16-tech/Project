@@ -1,0 +1,158 @@
+body {
+    margin: 0;
+    padding: 0;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  }
+  
+  /* Global styles */
+  body {
+    background-color: #f2f2f2; /* Set a background color */
+  }
+  
+  h1, p {
+    color:  #5fb5c9;
+    font-weight: bold;
+  }
+  
+  /* Content styles */
+  .content {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Table styles */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    border: 1px solid black;
+    padding: 8px;
+  }
+  
+  /* Container styles */
+  .container {
+    margin-top: 20px;
+    padding: 20px; /* Add some padding */
+    border-radius: 5px; /* Add border-radius for rounded corners */
+  }
+  
+  /* Form styles */
+  .movie-form {
+    margin-bottom: 20px;
+  }
+  
+  /* Card styles */
+  /* Card styles */
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    border-radius: 5px;
+    margin-bottom: 20px; /* Add margin between each card */
+    display: flex; /* Use flexbox to align content */
+    flex-direction: column; /* Stack image and text vertically */
+    min-height: 400px; /* Set a minimum height for the cards */
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-img-top {
+    flex: 1; /* Allow image to expand */
+    height: auto; /* Remove fixed height */
+    object-fit: cover;
+    border-top-left-radius: 5px; /* Add border radius to top-left corner */
+    border-top-right-radius: 5px; /* Add border radius to top-right corner */
+  }
+  
+  .card-body {
+    flex-grow: 1; /* Allow the card body to expand to fill remaining space */
+    display: flex; /* Use flexbox to align text */
+    flex-direction: column; /* Stack text vertically */
+    padding: 5px; /* Add padding to the card body */
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .card-text {
+    color: #666;
+    flex: 1; /* Allow text to expand */
+    overflow-y: auto;
+    padding: 10px; /* Add padding to text */
+  }
+  
+  .card-placeholder-icon {
+    flex: 1; /* Allow placeholder icon to expand */
+    background-color: #eee; /* Set background color for placeholder */
+    display: flex; /* Use flexbox to center icon */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    border-top-left-radius: 5px; /* Add border radius to top-left corner */
+    border-top-right-radius: 5px; /* Add border radius to top-right corner */
+  }
+  
+  .card-placeholder-icon i {
+    font-size: 48px; /* Adjust icon size */
+    color: #ccc; /* Set color for icon */
+  }
+  
+  /* Form group styles */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  /* Form control styles */
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Button styles */
+  .btn {
+    background-color: #5fb5c9;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: #3b8ca2;
+  }
+  
+  /* Additional styles for better spacing and alignment */
+  .container {
+    max-width: 800px; /* Increase max-width for better readability */
+    margin: 0 auto;
+  }
+  
+  .row {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Add space between cards */
+  }
+  
+  .col-md-4 {
+    flex: 0 0 calc(33.33% - 20px); /* Adjust width and add margin between cards */
+    max-width: calc(33.33% - 20px); /* Adjust max-width */
+    margin-bottom: 20px; 
+  }
+  
+  @media (max-width: 768px) {
+    .col-md-4 {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+  }
